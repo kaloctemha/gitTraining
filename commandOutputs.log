@@ -3240,3 +3240,262 @@ Fast-forward
  index.html    | 24 ++++++++++++------------
  2 files changed, 52 insertions(+), 16 deletions(-)
 PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task10
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git tag -a v1.0
+fatal: no tag message?
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git tag -a v1.0 -m "commands are grouped with base style"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show v1.0
+tag v1.0
+Tagger: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Thu Nov 12 00:21:02 2020 +0300
+
+commands are grouped with base style
+
+commit 2576211620c91a36acd6539f16e1b361bfe71be4 (HEAD -> main, tag: v1.0)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 23:41:21 2020 +0300
+
+    change h1 style
+
+diff --git a/css/style.css b/css/style.css
+index 545d6ab..6d3f2d6 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1,10 +1,13 @@
+ body {
+     padding : 0 10%;
++    background-image: linear-gradient(to right, rgb(189, 189, 224), rgb(233, 233, 190));
+ }
+
+ h1 {
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git tag v1.0-lw
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show v1.0-lw
+commit 2576211620c91a36acd6539f16e1b361bfe71be4 (HEAD -> main, tag: v1.0-lw, tag: v1.0)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 23:41:21 2020 +0300
+
+    change h1 style
+
+diff --git a/css/style.css b/css/style.css
+index 545d6ab..6d3f2d6 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1,10 +1,13 @@
+ body {
+     padding : 0 10%;
++    background-image: linear-gradient(to right, rgb(189, 189, 224), rgb(233, 233, 190));
+ }
+
+ h1 {
+-    color : blue;
+-    font-size : 72;
++
++    font-size : 46px;
++    text-align: center;
++    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # by default "git tag" is tagging the last commit
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 2576211  -   (HEAD -> main, tag: v1.0-lw, tag: v1.0)  change h1 style  (7 minutes ago)  - acolak@netas.com.tr 
+ dd193f8  -    update group styles  (8 minutes ago)  - acolak@netas.com.tr 
+ 666c166  -    changes on export button  (36 minutes ago)  - acolak@netas.com.tr 
+ 5e2f29c  -    add description for workflow cmds  (62 minutes ago)  - acolak@netas.com.tr 
+ ef1b83a  -    describe config and init cmds  (75 minutes ago)  - acolak@netas.com.tr 
+ 77ccfc7  -    add commandOutputs to the working directory  (83 minutes ago)  - acolak@netas.com.tr 
+ f7df352  -    fix conflict  (87 minutes ago)  - acolak@netas.com.tr 
+ 9c562b6  -    fix hover css issue  (2 hours ago)  - acolak@netas.com.tr 
+ 633e8c0  -    task6  (2 hours ago)  - acolak@netas.com.tr 
+ 5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+ c700ace  -    exclude button from export png  (3 hours ago)  - acolak@netas.com.tr 
+ 0515d2f  -    replace mousehover script with css hover  (3 hours ago)  - acolak@netas.com.tr 
+ a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+ fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git tag v0.9 f7df352 # tag a specific commit id
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show v0.9
+commit f7df352c6316ef05d5ad9734189def0041042a5e (tag: v0.9)
+Merge: 633e8c0 9c562b6
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 22:57:20 2020 +0300
+
+    fix conflict
+
+diff --cc index.html
+index 1abb064,ef1dad0..b552343
+--- a/index.html
++++ b/index.html
+@@@ -7,43 -7,24 +7,44 @@@
+          <button onclick="exportAsPNG()">Export as PNG</button>
+          <div id ="capture">
+              <h1>Git Cheat Sheet</h1>
+ -            <div class="command">git config</div>
+ -            <div class="command">git init</div>
+ -            <div class="command">git add</div>
+ -            <div class="command">git status</div>
+ -            <div class="command">git commit</div>
+ -            <div class="command">git diff</div>
+ -            <div class="command">git log</div>
+ -            <div class="command">git reset</div>
+ -            <div class="command">git restore</div>
+ -            <div class="command">git clean</div>
+ -            <div class="command">git show</div>
+ -            <div class="command">git rm</div>
+ -            <div class="command">git ls-files</div>
+ -            <div class="command">git mv</div>
+ -            <div class="command">git stash</div>
+ -            <div class="command">git branch</div>
+ -            <div class="command">git checkout</div>
+ -            <div class="command">git switch</div>
+++
+ +            <div>
+ +                Config
+-                 <div>git config</div>
+++                <div class="command">git config</div>
+ +            </div>
+ +            <div>
+ +                Create
+-                 <div>git init</div>
+++                <div class="command">git init</div>
+ +            </div>
+ +            <div>
+ +                Workflow
+-                 <div>git add</div>
+-                 <div>git commit</div>
+-                 <div>git reset</div>
+-                 <div>git restore</div>
+++                <div class="command">git add</div>
+++                <div class="command">git commit</div>
+++                <div class="command">git reset</div>
+++                <div class="command">git restore</div>
+ +            </div>
+ +            <div>
+ +                Inspection & History
+-                 <div>git status</div>
+-                 <div>git diff</div>
+-                 <div>git log</div>
+-                 <div>git show</div>
+-                 <div>git ls-files</div>
+++                <div class="command">git status</div>
+++                <div class="command">git diff</div>
+++                <div class="command">git log</div>
+++                <div class="command">git show</div>
+++                <div class="command">git ls-files</div>
+ +            </div>
+ +            <div>
+ +                File Operations
+-                 <div>git clean</div>
+-                 <div>git rm</div>
+-                 <div>git mv</div>
+++                <div class="command">git clean</div>
+++                <div class="command">git rm</div>
+++                <div class="command">git mv</div>
+ +            </div>
+ +            <div>
+ +                Branching
+-                 <div>git stash</div>
+-                 <div>git branch</div>
+-                 <div>git checkout</div>
+-                 <div>git switch</div>
+-                 <div>git merge</div>
+++                <div class="command">git stash</div>
+++                <div class="command">git branch</div>
+++                <div class="command">git checkout</div>
+++                <div class="command">git switch</div>
+++                <div class="command">git merge</div>
+ +            </div>
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js" integrity="sha512-k8F8QynmFNURwbUJC8drKA+fo3YfNvjqKzStdydD6au+MzvxBoRnxH8E31RJXwDY9DrnEiPhh9wBoDSIxhkyHQ==" crossorigin="anonymous"></script>
+          <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git tag # list of the tags
+v0.9
+v1.0
+v1.0-lw
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   commandOutputs.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git -am "end of the dat"
+unknown option: -am
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   commandOutputs.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "end of the day"
+[main 31c2beb] end of the day
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 668 insertions(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote add origin https://github.com/kaloctemha/gitTraining.git
+fatal: remote origin already exists.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote add origin https://github.com/kaloctemha/gitTraining.git
+fatal: remote origin already exists.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote
+origin
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote rm origin
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote -v
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote add origin https://github.com/kaloctemha/gitTraining.git
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote -v
+origin  https://github.com/kaloctemha/gitTraining.git (fetch)
+origin  https://github.com/kaloctemha/gitTraining.git (push)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote rename origin github
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote -v
+github  https://github.com/kaloctemha/gitTraining.git (fetch)
+github  https://github.com/kaloctemha/gitTraining.git (push)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git remote rename github origin
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git push -u origin main # -u means set the upstream as origin, next time "git push" will be enough
+Enumerating objects: 91, done.
+Counting objects: 100% (91/91), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (74/74), done.
+Writing objects: 100% (91/91), 25.39 KiB | 346.00 KiB/s, done.
+Total 91 (delta 30), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (30/30), done.
+To https://github.com/kaloctemha/gitTraining.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
