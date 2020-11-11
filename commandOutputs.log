@@ -2573,3 +2573,670 @@ PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d 
 Deleted branch task7 (was 9c562b6).
 PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
 * main
+
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout -b scratchpad #create a dummy branch
+Switched to a new branch 'scratchpad'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "update bg color"
+[scratchpad 51e4c66] update bg color
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 229 insertions(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "update group styles"
+[scratchpad b7a4327] update group styles
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "change h1 style"
+[scratchpad 3dc54e1] change h1 style
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 3dc54e1  -   (HEAD -> scratchpad)  change h1 style  (4 seconds ago)  - acolak@netas.com.tr 
+ b7a4327  -    update group styles  (2 minutes ago)  - acolak@netas.com.tr 
+ 51e4c66  -    update bg color  (12 minutes ago)  - acolak@netas.com.tr 
+ 5e2f29c  -   (main)  add description for workflow cmds  (19 minutes ago)  - acolak@netas.com.tr 
+ ef1b83a  -    describe config and init cmds  (32 minutes ago)  - acolak@netas.com.tr 
+ 77ccfc7  -    add commandOutputs to the working directory  (40 minutes ago)  - acolak@netas.com.tr 
+ f7df352  -    fix conflict  (44 minutes ago)  - acolak@netas.com.tr 
+ 9c562b6  -    fix hover css issue  (52 minutes ago)  - acolak@netas.com.tr 
+ 633e8c0  -    task6  (57 minutes ago)  - acolak@netas.com.tr 
+ 5426c8c  -    Merge branch 'task5' into main  (88 minutes ago)  - acolak@netas.com.tr 
+ c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+ 0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+ a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+ fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> #we have 3 commits on scratchpad
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout -b task10 main # create the branch on top of main, not on scratchpad
+Switched to a new branch 'task10'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "changes on export button"
+[task10 666c166] changes on export button
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 20 insertions(+), 2 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # for task10, we need to change header and titles. we already done those in scratchpad, retrieve from there
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  666c166  -   (HEAD -> task10)  changes on export button  (78 seconds ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (9 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (10 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (20 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (27 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (41 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (49 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (53 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (61 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (66 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick b7a4327 #retrieve group style changes from scratchpad, id : b7a4327
+Auto-merging index.html
+Auto-merging css/style.css
+[task10 d592539] update group styles
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 3dc54e1 #retrieve header styles
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # because I ve edited index.html, editing manually
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit --amend -m "added classname for CREATE group"
+fatal: You are in the middle of a cherry-pick -- cannot amend.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick --abort
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit --amend -m "added classname for CREATE group"
+[task10 ddabb3c] added classname for CREATE group
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 3dc54e1 #retrieve header styles
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+You are currently cherry-picking commit 3dc54e1.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick --abort
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show -p -1
+commit ddabb3cfd995627f0ce26f9808e402bc1f6b9b99 (HEAD -> task10)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 23:39:55 2020 +0300
+
+    added classname for CREATE group
+
+diff --git a/css/style.css b/css/style.css
+index 7ab5474..545d6ab 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -7,12 +7,27 @@ h1 {
+     font-size : 72;
+ }
+
++.group {
++    border : 1px solid black;
++    border-radius : 5px;
++    margin : 10px, 0px
++}
++
++
++.group > .header {
++    font-size: xx-large;
++    background-color:  gray;
++    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
++    color : white;
++    padding : 10px;
++    font-weight: bold;
++}
++
+ .command {
+     border: 1px solid;
+     border-color: lightblue;
+     font-size: x-large;
+     padding: 10px;
+-    margin-bottom: 5px;
+     border-radius: 3px;
+     box-shadow: 0 0 3px 0px #00000033;
+ }
+diff --git a/index.html b/index.html
+index db09c74..14a39a4 100644
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "some changes cant be sure"
+[task10 436cca4] some changes cant be sure
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 3dc54e1 #retrieve header styles
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  436cca4  -   (HEAD -> task10)  some changes cant be sure  (27 seconds ago)  - acolak@netas.com.tr 
+*  ddabb3c  -    added classname for CREATE group  (2 minutes ago)  - acolak@netas.com.tr 
+*  666c166  -    changes on export button  (11 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (18 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (20 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (30 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (37 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (50 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (58 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (62 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (70 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (75 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+  main
+  scratchpad
+* task10
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+You are currently cherry-picking commit 3dc54e1.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git git reset --hard 666c166
+git: 'git' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard 666c166
+HEAD is now at 666c166 changes on export button
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 666c166  -   (HEAD -> task10)  changes on export button  (13 minutes ago)  - acolak@netas.com.tr 
+ 5e2f29c  -   (main)  add description for workflow cmds  (39 minutes ago)  - acolak@netas.com.tr 
+ ef1b83a  -    describe config and init cmds  (53 minutes ago)  - acolak@netas.com.tr 
+ 77ccfc7  -    add commandOutputs to the working directory  (61 minutes ago)  - acolak@netas.com.tr 
+ f7df352  -    fix conflict  (65 minutes ago)  - acolak@netas.com.tr 
+ 9c562b6  -    fix hover css issue  (73 minutes ago)  - acolak@netas.com.tr 
+ 633e8c0  -    task6  (78 minutes ago)  - acolak@netas.com.tr 
+ 5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+ c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+ 0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+ a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+ fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  666c166  -   (HEAD -> task10)  changes on export button  (14 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (21 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (23 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (33 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (40 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (53 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (61 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (65 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (73 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (78 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick b7a4327
+Auto-merging index.html
+Auto-merging css/style.css
+[task10 0f524bd] update group styles
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  0f524bd  -   (HEAD -> task10)  update group styles  (15 seconds ago)  - acolak@netas.com.tr 
+*  666c166  -    changes on export button  (15 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (23 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (24 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (34 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (41 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (55 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (63 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (67 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (75 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (80 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 3dc54e1
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+You are currently cherry-picking commit 3dc54e1.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+You are currently cherry-picking commit 3dc54e1.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore css/style.css
+error: path 'css/style.css' is unmerged
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset css/style.css
+Unstaged changes after reset:
+M       css/style.css
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+You are currently cherry-picking commit 3dc54e1.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard HEAD~
+HEAD is now at 666c166 changes on export button
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  666c166  -   (HEAD -> task10)  changes on export button  (19 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (27 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (28 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (39 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (45 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (59 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (67 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (71 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (79 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (84 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick b7a4327
+Auto-merging index.html
+Auto-merging css/style.css
+[task10 196bb99] update group styles
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+
+
+
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 3dc54e1
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard 666c166
+HEAD is now at 666c166 changes on export button
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  666c166  -   (HEAD -> task10)  changes on export button  (23 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (30 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (32 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (42 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (49 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (62 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (70 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (74 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (82 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (87 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 51e4c66..3dc54e1 # _IMPORTANT_ : starting from 51e4c66(NOT included) until 3dc54e1(included)
+Auto-merging index.html
+Auto-merging css/style.css
+[task10 ba1a8d0] update group styles
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+Cherry-pick currently in progress.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit --amend "fixed conflict"
+fatal: You are in the middle of a cherry-pick -- cannot amend.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> it cherry-pick --continue
+It : Cannot process argument transformation on parameter 'test'. Cannot convert the "--continue" value of type "System.String" to type "System.Management.Automation.ScriptBlock".
+At line:1 char:16
++ it cherry-pick --continue
++                ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [It], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,It
+ 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> ^C
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> ^C
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick --continue
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       css/style.css
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick --abort
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick 51e4c66..3dc54e1 # _IMPORTANT_ : starting from 51e4c66(NOT included) until 3dc54e1(included)
+Auto-merging index.html
+Auto-merging css/style.css
+[task10 dd193f8] update group styles
+ Date: Wed Nov 11 23:39:55 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+Auto-merging css/style.css
+CONFLICT (content): Merge conflict in css/style.css
+error: could not apply 3dc54e1... change h1 style
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+Cherry-pick currently in progress.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch task10
+Cherry-pick currently in progress.
+  (run "git cherry-pick --continue" to continue)
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes to be committed:
+        modified:   css/style.css
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git cherry-pick --continue
+[task10 2576211] change h1 style
+ Date: Wed Nov 11 23:41:21 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  2576211  -   (HEAD -> task10)  change h1 style  (18 seconds ago)  - acolak@netas.com.tr 
+*  dd193f8  -    update group styles  (58 seconds ago)  - acolak@netas.com.tr 
+*  666c166  -    changes on export button  (28 minutes ago)  - acolak@netas.com.tr 
+| *  3dc54e1  -   (scratchpad)  change h1 style  (36 minutes ago)  - acolak@netas.com.tr 
+| *  b7a4327  -    update group styles  (37 minutes ago)  - acolak@netas.com.tr 
+| *  51e4c66  -    update bg color  (47 minutes ago)  - acolak@netas.com.tr 
+|/
+*  5e2f29c  -   (main)  add description for workflow cmds  (54 minutes ago)  - acolak@netas.com.tr 
+*  ef1b83a  -    describe config and init cmds  (68 minutes ago)  - acolak@netas.com.tr 
+*  77ccfc7  -    add commandOutputs to the working directory  (76 minutes ago)  - acolak@netas.com.tr 
+*    f7df352  -    fix conflict  (80 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -    fix hover css issue  (88 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -    task6  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (2 hours ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (2 hours ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (2 hours ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+*  6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout main
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task10
+Updating 5e2f29c..2576211
+Fast-forward
+ css/style.css | 44 ++++++++++++++++++++++++++++++++++++++++----
+ index.html    | 24 ++++++++++++------------
+ 2 files changed, 52 insertions(+), 16 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task10
