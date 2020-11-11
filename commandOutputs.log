@@ -1,0 +1,2575 @@
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add index.html
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: Ahmet COLAK <acolak@netas.com.tr>
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "createIndex.html_202011061747"
+[master (root-commit) a63f40e] createIndex.html_202011061747
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   css/style.css
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+A  css/style.css
+M  index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 44b4902..b4ae3d0 100644
+--- a/index.html
++++ b/index.html
+@@ -1,8 +1,9 @@
+ <html>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> !
+>>
+At line:1 char:2
++ !
++  ~
+Missing expression after unary operator '!'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+ 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --cached
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/css/style.css b/css/style.css
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 44b4902..b4ae3d0 100644
+--- a/index.html
++++ b/index.html
+@@ -1,8 +1,9 @@
+ <html>
+     <head>
++        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+         <title>Learning GIT</title>
+     </head>
+     <body>
+-        Hello GIT
++        <h1>Git Cheat Sheet</h1>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   css/style.css
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status-s
+git: 'status-s' is not a git command. See 'git --help'.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+A  css/style.css
+M  index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 44b4902..ffa98e2 100644
+--- a/index.html
++++ b/index.html
+@@ -1,8 +1,15 @@
+ <html>
+     <head>
++        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+         <title>Learning GIT</title>
+     </head>
+     <body>
+-        Hello GIT
++        <h1>Git Cheat Sheet</h1>
++        <div>git config</div>
++        <div>git init</div>
++        <div>git add</div>
++        <div>git status</div>
++        <div>git commit</div>
++        <div>git diff</div>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   css/style.css
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 44b4902..ffa98e2 100644
+--- a/index.html
++++ b/index.html
+@@ -1,8 +1,15 @@
+ <html>
+     <head>
++        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+         <title>Learning GIT</title>
+     </head>
+...skipping...
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git config --local core.editor "code --wait"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git config --local -l
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.editor=code --wait
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit
+Aborting commit due to empty commit message.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -v
+[master a42e1e1] Change header color
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 css/style.css
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --patch
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>         <div>git config</div>
+< : The term '<' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:9
++         <div>git config</div>
++         ~
+    + CategoryInfo          : ObjectNotFound: (<:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>         <div>git init</div>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -1
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -2
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+
+commit a63f40edfe1e6b6ec08caf728d0bf670270105d1
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 17:48:07 2020 +0300
+
+    createIndex.html_202011061747
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --pretty=oneline
+a42e1e1ece6c8df19299a1e77c0862f74809ed58 (HEAD -> master) Change header color
+a63f40edfe1e6b6ec08caf728d0bf670270105d1 createIndex.html_202011061747
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --pretty=format:"%h - %s - (%cr) - $ae"
+a42e1e1 - Change header color - (20 hours ago) -
+a63f40e - createIndex.html_202011061747 - (20 hours ago) -
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --pretty=format:"%h - %s - (%cr) - %ae"
+a42e1e1 - Change header color - (20 hours ago) - acolak@netas.com.tr
+a63f40e - createIndex.html_202011061747 - (20 hours ago) - acolak@netas.com.tr
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --pretty=format:"%C(red) %h %Creset - %C(yellow) %d %Creset %s %C(green) (%cr) %C(dim magenta) - %ae %Creset"
+ a42e1e1  -   (HEAD -> master)  Change header color  (20 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (21 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git config --local alis.lg "log --pretty=format:'%C(red) %h %Creset - %C(yellow) %d %Creset %s %C(green) (%cr) %C(dim magenta) - %ae %Creset'"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+git: 'lg' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git config --local alias.lg "log --pretty=format:'%C(red) %h %Creset - %C(yellow) %d %Creset %s %C(green) (%cr) %C(dim magenta) - %ae %Creset'"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ a42e1e1  -   (HEAD -> master)  Change header color  (20 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (21 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "Added script.js file and 2 the index"
+[master 7b26757] Added script.js file and 2 the index
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+?? script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+A  script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit --amend -m "add sciprt.js to the last commit"
+[master b9d327e] add sciprt.js to the last commit
+ Date: Sat Nov 7 14:31:24 2020 +0300
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 9 insertions(+)
+ create mode 100644 script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (8 seconds ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (20 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (21 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -2
+commit b9d327e546268e3d5341a6410a0d41e519b20879 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 14:31:24 2020 +0300
+
+    add sciprt.js to the last commit
+
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff b9d327e546268e3d5341a6410a0d41e519b20879
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit b9d327e546268e3d5341a6410a0d41e519b20879 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 14:31:24 2020 +0300
+
+    add sciprt.js to the last commit
+
+diff --git a/index.html b/index.html
+index ffa98e2..ab0d034 100644
+--- a/index.html
++++ b/index.html
+@@ -11,5 +11,6 @@
+         <div>git status</div>
+@@ -11,5 +11,6 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/script.js b/script.js
+new file mode 100644
+index 0000000..9ddae14
+--- /dev/null
++++ b/script.js
+@@ -0,0 +1,8 @@
++document.querySelectorAll('div').forEach(element => {
++    element.onmouseover = () => {
++        element.style.color = 'red'
++    }
++    element.onmouseout = () => {
++        element.style.color = 'black'
++    }
++});
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+        new file:   logo.jpg
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset index.html
+Unstaged changes after reset:
+M       index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   logo.jpg
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout index.html
+Updated 1 path from the index
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   logo.jpg
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   logo.jpg
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> status -s
+status : The term 'status' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ status -s
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (status:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+M  index.html
+A  logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore --staged index.html #remove "index.html" from staging area but keep in wokring directory
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+ M index.html
+A  logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+A  logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore --staged logo.png
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore --staged logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+?? logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logo.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git restore logo.jpg
+
+
+
+
+
+error: pathspec 'logo.jpg' did not match any file(s) known to git
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logo.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git clean #remove untracked files from the working directory
+fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; refusing to clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git clean -d -f #remove untracked files from the working directory, d for directory, f for force
+Removing logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git clean -d -f -n # -n stands for dry-run, which wont actually delete but tell what u re about to, good option for safety
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git clean -d -f -n # -n stands for dry-run, which wont actually delete but tell what u re about to, good option for safety
+Would remove logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logo.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git clean -d -f #remove untracked files from the working directory, d for directory, f for force
+Removing logo.jpg
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "Add bug" # -a stands for adding the file from unstaged area 2 staged, but it only does work for 'TRACKED' files, untracked files will not be added to the staging are to be ready commit
+[master b69ec5b] Add bug
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit b69ec5b457aeb0d34997ad069b6016a30c255a37 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 15:10:07 2020 +0300
+
+    Add bug
+
+diff --git a/index.html b/index.html
+index ab0d034..9875af9 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,7 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <div>This will be removed</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show HEAD #HEAD points to current branch's last commit
+commit b69ec5b457aeb0d34997ad069b6016a30c255a37 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 15:10:07 2020 +0300
+
+    Add bug
+
+diff --git a/index.html b/index.html
+index ab0d034..9875af9 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,7 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <div>This will be removed</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show HEAD~~ # ~ stands for the parent of the previous commit, HEAD~~ will go back twice and find the commit
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show HEAD~3 # 3 times backwards commit
+commit a63f40edfe1e6b6ec08caf728d0bf670270105d1
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 17:48:07 2020 +0300
+
+    createIndex.html_202011061747
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..44b4902
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>Learning GIT</title>
++    </head>
++    <body>
++        Hello GIT
++    </body>
++</html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show HEAD^3 # 3 times backwards commit
+fatal: ambiguous argument 'HEAD^3': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show HEAD^^ # 2 times backwards commit
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 18:09:23 2020 +0300
+
+    Change header color
+
+    CSS file is added to set color and size
+    add list of commands
+
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..44ab228
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,4 @@
++h1 {
++    color : blue;
++    font-size : 72;
++}
+\ No newline at end of file
+diff --git a/index.html b/index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b69ec5b  -   (HEAD -> master)  Add bug  (8 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (43 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --soft  HEAD~ # we go back to previous commit, removing everyhing in the currnt "Add bug" commit and the commit itself
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (44 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff -staged
+error: invalid option: -staged
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/index.html b/index.html
+index ab0d034..9875af9 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,7 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <div>This will be removed</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # so seen above, with '--soft'option of 'reset', we removed our changes from the local repository but kept them in the staging area and working directory
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "Add bug"
+[master dd5ac48] Add bug
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit dd5ac48dadcb0df0c9a851b07e8bcde7b6e4b2a3 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 15:22:44 2020 +0300
+
+    Add bug
+
+diff --git a/index.html b/index.html
+index ab0d034..9875af9 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,7 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <div>This will be removed</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ dd5ac48  -   (HEAD -> master)  Add bug  (53 seconds ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (49 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --mixed HEAD~ #'mixed' is optional here
+Unstaged changes after reset:
+M       index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (50 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # so with 'mixed' option or no option, reset command removes the changes from the staging area and local repo but keeps it in the working directory
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "add bug" #add the change back to staging area with option -a and commit
+[master 916cd3c] add bug
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 916cd3c  -   (HEAD -> master)  add bug  (5 seconds ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (52 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard HEAD~ # remove the change for good, no stays even in the working directory
+HEAD is now at b9d327e add sciprt.js to the last commit
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (53 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "this will be gone"
+[master 5739669] this will be gone
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 5739669  -   (HEAD -> master)  this will be gone  (3 seconds ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (55 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard b9d327e # go back to a specific commit ID
+HEAD is now at b9d327e add sciprt.js to the last commit
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (56 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show a63f40e #show a specfic commit id changes
+commit a63f40edfe1e6b6ec08caf728d0bf670270105d1
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Fri Nov 6 17:48:07 2020 +0300
+
+    createIndex.html_202011061747
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..44b4902
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>Learning GIT</title>
++    </head>
++    <body>
++        Hello GIT
++    </body>
++</html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "first change"
+[master 36b7110] first change
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "last change"
+[master bbca75e] last change
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ bbca75e  -   (HEAD -> master)  last change  (10 seconds ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (36 seconds ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (62 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git revert HEAD #undo the changes in the commit pointed by HEAD
+[master f3cd6f0] Revert "last change"
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ f3cd6f0  -   (HEAD -> master)  Revert "last change"  (14 seconds ago)  - acolak@netas.com.tr 
+ bbca75e  -    last change  (2 minutes ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (2 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (64 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (21 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit f3cd6f0471fb6fa9ae2ea63ed62bf7577eafbe2d (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 15:38:17 2020 +0300
+
+    Revert "last change"
+
+    This reverts commit bbca75eefb4e71f7671569228ffc72d7dcea1a4f.
+
+diff --git a/index.html b/index.html
+index 7965976..e0344ba 100644
+--- a/index.html
++++ b/index.html
+@@ -12,7 +12,6 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
+-        last change
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # so git 'revert' fires a new commit reverting the changes in the target commit instead of removing the commit itself like done in 'reset'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ f3cd6f0  -   (HEAD -> master)  Revert "last change"  (3 minutes ago)  - acolak@netas.com.tr 
+ bbca75e  -    last change  (5 minutes ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (6 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (67 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard bbca75e
+HEAD is now at bbca75e last change
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ bbca75e  -   (HEAD -> master)  last change  (5 minutes ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (6 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (67 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git revert 36b7110 #only undo the changes in commit with given ID,so this wont go back to 36b7110, but only remove its specific changes, changes above commits will be kept 
+Auto-merging index.html
+[master 910875b] Revert "first change"
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 910875b  -   (HEAD -> master)  Revert "first change"  (16 seconds ago)  - acolak@netas.com.tr 
+ bbca75e  -    last change  (8 minutes ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (9 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (70 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -p
+error: unknown switch `p'
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --no-renames          do not detect renames
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+    --show-ignored-directory
+                          (DEPRECATED: use --ignore=matching instead) Only show directories that match an ignore pattern name.
+    --no-lock-index       (DEPRECATED: use `git --no-optional-locks status` instead) Do not lock the index
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit 910875b3b2b84128f895dd8fb045557b9e680592 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 15:44:21 2020 +0300
+
+    Revert "first change"
+
+    This reverts commit 36b7110cd971fe6beef53a7fe072735ac4b88a82.
+
+diff --git a/index.html b/index.html
+index 7965976..42e012d 100644
+--- a/index.html
++++ b/index.html
+@@ -5,7 +5,6 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
+-        first change
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 910875b  -   (HEAD -> master)  Revert "first change"  (3 minutes ago)  - acolak@netas.com.tr 
+ bbca75e  -    last change  (11 minutes ago)  - acolak@netas.com.tr 
+ 36b7110  -    first change  (11 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (72 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard b9d327e
+HEAD is now at b9d327e add sciprt.js to the last commit
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ b9d327e  -   (HEAD -> master)  add sciprt.js to the last commit  (73 minutes ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+
+
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "mising cmds"
+[master 1f8808e] mising cmds
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 21 insertions(+)
+ create mode 100644 temp-delete.txt
+ create mode 100644 todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 1f8808e  -   (HEAD -> master)  mising cmds  (4 seconds ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (2 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (22 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit 1f8808e466068b21479a727806e7c1aef7a99428 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 16:14:33 2020 +0300
+
+    mising cmds
+
+diff --git a/css/style.css b/css/style.css
+index 44ab228..226aaa4 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1,4 +1,18 @@
++body {
++    padding : 0 10%;
++}
++
+ h1 {
+     color : blue;
+     font-size : 72;
++}
++
++div {
++    border: 1px solid;
++    border-color: lightblue;
++    font-size: x-large;
++    padding: 10px;
++    margin-bottom: 5px;
++    border-radius: 3px;
++    box-shadow: 0 0 3px 0px #00000033;
+ }
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index ab0d034..0c8c931 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,11 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
+         <div>git diff</div>
+         <div>git diff</div>
++        <div>git lg</div>
++        <div>git reset</div>
++        <div>git restore</div>
++        <div>git clean</div>
++        <div>git show</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/temp-delete.txt b/temp-delete.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/todo.txt b/todo.txt
+new file mode 100644
+index 0000000..d4a6bae
+--- /dev/null
++++ b/todo.txt
+@@ -0,0 +1,2 @@
++add missing comments
++export cheat
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # here we dont need the changes in "temp-delete.txt", we need to untrack it
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p oneline
+fatal: ambiguous argument 'oneline': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p
+commit 1f8808e466068b21479a727806e7c1aef7a99428 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 16:14:33 2020 +0300
+
+    mising cmds
+
+diff --git a/css/style.css b/css/style.css
+index 44ab228..226aaa4 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1,4 +1,18 @@
++body {
++    padding : 0 10%;
++}
++
+ h1 {
+     color : blue;
+     font-size : 72;
++}
++
++div {
++    border: 1px solid;
++    border-color: lightblue;
++    font-size: x-large;
++    padding: 10px;
++    margin-bottom: 5px;
++    border-radius: 3px;
++    box-shadow: 0 0 3px 0px #00000033;
+ }
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index ab0d034..0c8c931 100644
+--- a/index.html
++++ b/index.html
+@@ -11,6 +11,11 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <div>git lg</div>
++        <div>git reset</div>
++        <div>git restore</div>
++        <div>git clean</div>
++        <div>git show</div>
+         <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/temp-delete.txt b/temp-delete.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/todo.txt b/todo.txt
+new file mode 100644
+index 0000000..d4a6bae
+--- /dev/null
++++ b/todo.txt
+@@ -0,0 +1,2 @@
++add missing comments
++export cheat
+\ No newline at end of file
+
+commit b9d327e546268e3d5341a6410a0d41e519b20879
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 14:31:24 2020 +0300
+
+    add sciprt.js to the last commit
+
+diff --git a/index.html b/index.html
+index ffa98e2..ab0d034 100644
+--- a/index.html
++++ b/index.html
+@@ -11,5 +11,6 @@
+         <div>git status</div>
+         <div>git commit</div>
+         <div>git diff</div>
++        <script src="script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/script.js b/script.js
+new file mode 100644
+index 0000000..9ddae14
+--- /dev/null
++++ b/script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --raw
+commit 1f8808e466068b21479a727806e7c1aef7a99428 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 16:14:33 2020 +0300
+
+    mising cmds
+
+:100644 100644 44ab228 226aaa4 M        css/style.css
+:100644 100644 ab0d034 0c8c931 M        index.html
+:000000 100644 0000000 e69de29 A        temp-delete.txt
+:000000 100644 0000000 d4a6bae A        todo.txt
+
+commit b9d327e546268e3d5341a6410a0d41e519b20879
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 14:31:24 2020 +0300
+
+    add sciprt.js to the last commit
+
+:100644 100644 ffa98e2 ab0d034 M        index.html
+:000000 100644 0000000 9ddae14 A        script.js
+
+commit a42e1e1ece6c8df19299a1e77c0862f74809ed58
+Author: Ahmet COLAK <acolak@netas.com.tr>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --raw -1
+commit 1f8808e466068b21479a727806e7c1aef7a99428 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 16:14:33 2020 +0300
+
+    mising cmds
+
+:100644 100644 44ab228 226aaa4 M        css/style.css
+:100644 100644 ab0d034 0c8c931 M        index.html
+:000000 100644 0000000 e69de29 A        temp-delete.txt
+:000000 100644 0000000 d4a6bae A        todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git ls-files #show the files in the repository which are being TRACKED
+css/style.css
+index.html
+script.js
+temp-delete.txt
+todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git rm temp-delete.txt # delete the file for good, do not keep it even in the working directory, wont be TRACKED afterwards
+rm 'temp-delete.txt'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+D  temp-delete.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git rm --cached todo.txt # --cached option will provide us to keep the file in the working directory but remove from the staging area
+rm 'todo.txt'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+D  temp-delete.txt
+D  todo.txt
+?? todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    temp-delete.txt
+        deleted:    todo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        todo.txt
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "remove txt files"
+[master 6ded45b] remove txt files
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 temp-delete.txt
+ delete mode 100644 todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        todo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --raw -1
+commit 6ded45b4c1c73a0275cd5504bac339ceb3fbc114 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sat Nov 7 16:27:57 2020 +0300
+
+    remove txt files
+
+:100644 000000 e69de29 0000000 D        temp-delete.txt
+:100644 000000 d4a6bae 0000000 D        todo.txt
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git ls-files # see that temp-delete.txt is removed from our TRACKED files
+css/style.css
+index.html
+script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+
+
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        todo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # we dont want this "todo.txt" to ve shown in Untracked files, we wanna ignore it 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status # after adding .gitignore file
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "adding .gitignore"
+[master d8b3a4c] adding .gitignore
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ d8b3a4c  -   (HEAD -> master)  adding .gitignore  (4 seconds ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (7 minutes ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (21 minutes ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (2 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (22 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (23 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+M  index.html
+M  js/script.js
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "export png function"
+[master dc70e09] export png function
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git show
+commit dc70e09461e18ad60b01859f5c2dba4e05eb0967 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sun Nov 8 00:08:42 2020 +0300
+
+    export png function
+
+diff --git a/index.html b/index.html
+index 6a0ccf2..b6015a9 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ dc70e09  -   (HEAD -> master)  export png function  (32 seconds ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (23 minutes ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (8 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (8 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (8 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (10 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (30 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (30 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff dc70e09
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log -p -1
+commit dc70e09461e18ad60b01859f5c2dba4e05eb0967 (HEAD -> master)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sun Nov 8 00:08:42 2020 +0300
+
+    export png function
+
+diff --git a/index.html b/index.html
+index 6a0ccf2..b6015a9 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/js/script.js b/js/script.js
+index 9ddae14..16c8ad4 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -5,4 +5,15 @@ document.querySelectorAll('div').forEach(element => {
+     element.onmouseout = () => {
+         element.style.color = 'black'
+     }
+-});
+\ No newline at end of file
++});
++
++
++function exportAsPNG() {
++    html2canvas(document.querySelector("body")).then(canvas => {
++        canvas.toBlob(function (blob) {
++            let file = new Blob([blob], { type: "application/octet-stream" });
++            let blobURL = URL.createObjectURL(file);
++            window.location.href = blobURL;
++        })
++    });
++}
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --soft HEAD~
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+        modified:   js/script.js
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git diff --staged
+diff --git a/index.html b/index.html
+index 6a0ccf2..b6015a9 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/js/script.js b/js/script.js
+index 9ddae14..16c8ad4 100644
+index 9ddae14..16c8ad4 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -5,4 +5,15 @@ document.querySelectorAll('div').forEach(element => {
+     element.onmouseout = () => {
+         element.style.color = 'black'
+     }
+-});
+\ No newline at end of file
++});
++
++
++function exportAsPNG() {
++    html2canvas(document.querySelector("body")).then(canvas => {
++        canvas.toBlob(function (blob) {
++            let file = new Blob([blob], { type: "application/octet-stream" });
++            let blobURL = URL.createObjectURL(file);
++            window.location.href = blobURL;
++        })
++    });
++}
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash # will move all the changes in the last commit to the stash, so that we will find the previous mistake in the directory, then take our actual changes
+back from the stash
+Saved working directory and index state WIP on master: 2bd14f0 move script.js to js/ folder
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status -s
+ M index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "fixed the problem in index.html"
+[master 5c6a910] fixed the problem in index.html
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 2bd14f0 move script.js to js/ folder
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show -p
+diff --git a/index.html b/index.html
+index 6a0ccf2..b6015a9 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/js/script.js b/js/script.js
+index 9ddae14..16c8ad4 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -5,4 +5,15 @@ document.querySelectorAll('div').forEach(element => {
+     element.onmouseout = () => {
+         element.style.color = 'black'
+     }
+-});
+\ No newline at end of file
++});
++
++
++function exportAsPNG() {
++    html2canvas(document.querySelector("body")).then(canvas => {
++        canvas.toBlob(function (blob) {
++            let file = new Blob([blob], { type: "application/octet-stream" });
++            let blobURL = URL.createObjectURL(file);
++            window.location.href = blobURL;
++        })
++    });
++}
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash apply # get the changes from the stash to the working directory, they wont be staged already, needs to be added again
+Auto-merging index.html
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   js/script.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 2bd14f0 move script.js to js/ folder
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash drop #changes stays in the stash, we dont need them, lets drop
+Dropped refs/stash@{0} (3b1413b17a499f6b51fe23303060431558c5d73d)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # nothing in the stash
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash push # same as "git stash"
+Saved working directory and index state WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash pop # same as "git stash apply"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   js/script.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (733481a868fa70157f19a38ca82129fafbbdc4e7)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # "git stash pop" also drops the changes from the stash, so "pop = apply + drop"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash push
+Saved working directory and index state WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash push
+Saved working directory and index state WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 5c6a910 fixed the problem in index.html
+stash@{1}: WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show -p # show the changes on the top of stash stack
+diff --git a/js/script.js b/js/script.js
+index 9ddae14..46ebcc7 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -1,4 +1,5 @@
+ document.querySelectorAll('div').forEach(element => {
++    console.log();
+     element.onmouseover = () => {
+         element.style.color = 'red'
+     }
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show stash@{0} # show the changes for the given ID
+Too many revisions specified: 'stash@' 'MAA=' 'xml' 'text'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show stash@{0} -p
+Too many revisions specified: 'stash@' 'MAA=' 'xml' 'text'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 5c6a910 fixed the problem in index.html
+stash@{1}: WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show stash@{0}
+Too many revisions specified: 'stash@' 'MAA=' 'xml' 'text'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show stash@{1}
+Too many revisions specified: 'stash@' 'MQA=' 'xml' 'text'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show "stash@{1}"
+ index.html   |  2 ++
+ js/script.js | 14 +++++++++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash show -p "stash@{1}"
+diff --git a/index.html b/index.html
+index 4f585a9..73ad76a 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+     </body>
+ </html>
+diff --git a/index.html b/index.html
+index 4f585a9..73ad76a 100644
+--- a/index.html
++++ b/index.html
+@@ -5,6 +5,7 @@
+     </head>
+     <body>
+         <h1>Git Cheat Sheet</h1>
++        <button onclick="exportAsPNG()">Export as PNG</button>
+         <div>git config</div>
+         <div>git init</div>
+         <div>git add</div>
+@@ -16,6 +17,7 @@
+         <div>git restore</div>
+         <div>git clean</div>
+         <div>git show</div>
++        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+         <script src="js/script.js"></script>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/js/script.js b/js/script.js
+index 9ddae14..ab80277 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -5,4 +5,16 @@ document.querySelectorAll('div').forEach(element => {
+     element.onmouseout = () => {
+         element.style.color = 'black'
+     }
+-});
+\ No newline at end of file
++});
++
++
++function exportAsPNG() {
++    console.log();
++    html2canvas(document.querySelector("body")).then(canvas => {
++        canvas.toBlob(function (blob) {
++            let file = new Blob([blob], { type: "application/octet-stream" });
++            let blobURL = URL.createObjectURL(file);
++            window.location.href = blobURL;
++        })
++    });
++}
+\ No newline at end of file
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash pop "stash@{1}" # get the changes in the stash with given ID
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   js/script.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped stash@{1} (743772b559fff2ea89045e5f7e350288f86f4024)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+stash@{0}: WIP on master: 5c6a910 fixed the problem in index.html
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash clear # removes everything in the stash, "git stash drop" only drops the top
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git stash list
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "export png function"
+[master fd4615b] export png function
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ fd4615b  -   (HEAD -> master)  export png function  (21 seconds ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (24 minutes ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (54 minutes ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (8 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (8 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (8 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (10 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (31 hours ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (31 hours ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+
+
+
+
+
+
+==============================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* master
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch test #create a new branch named "test"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* master
+  test
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -v # show the latest commits for each branch
+* master fd4615b export png function
+  test   fd4615b export png function
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout test
+Switched to branch 'test'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch test
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+  master
+* test
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout -b test2 # create "test2" branch and checkout
+Switched to a new branch 'test2'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+  master
+  test
+* test2
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d test # delete "test" branch
+Deleted branch test (was fd4615b).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+  master
+* test2
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d test2 # will be rejected, cannot delete active branch
+error: Cannot delete branch 'test2' checked out at 'D:/Users/acolak/Desktop/acolak/SPRING/GIT Training/playgorund'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch test2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "temp index change on test2 branch"
+[test2 3821138] temp index change on test2 branch
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ 3821138  -   (HEAD -> test2)  temp index change on test2 branch  (24 seconds ago)  - acolak@netas.com.tr 
+ fd4615b  -   (master)  export png function  (16 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (16 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (17 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (24 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (24 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (24 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (26 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # (HEAD -> test2) head is pointing test2, so lets try to delete this branch, first switch 2 master
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout master
+Switched to branch 'master'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d test2 # will fail since there are commits in test2 which should be merged to master
+error: The branch 'test2' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test2'.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout test2
+Switched to branch 'test2'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # as soon as we switch between branches, the changes are retrieved automatically
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout master
+Switched to branch 'master'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -D test2
+Deleted branch test2 (was 3821138).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -m master main #rename master branch with main
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git config --global init.defaultBranch main # we can change the default branch name, which was master in the beginning
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ fd4615b  -   (HEAD -> main)  export png function  (16 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (16 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (17 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (24 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (24 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (24 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (26 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> #we can create branches starting from a specific commit ID, here 1f8808e - missing cmds used 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch oldBranch 1f8808e
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+  oldBranch
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -v
+* main      fd4615b export png function
+  oldBranch 1f8808e mising cmds
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # last commit for newly created branch "oldBranch" is 1f8808e
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ fd4615b  -   (HEAD -> main)  export png function  (16 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (16 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (17 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (24 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (24 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -   (oldBranch)  mising cmds  (24 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (26 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # __ 1f8808e  -   (oldBranch)  mising cmds  (24 hours ago)  - acolak@netas.com.tr __
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+
+
+
+
+
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+  oldBranch
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch -c taks3 # creates a new branch named task3, and switches to it, -c stands for create
+Switched to a new branch 'taks3'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch - # switch to previous branch
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch -
+Switched to branch 'taks3'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -a -m "add missing cmds"
+[taks3 a2f22c9] add missing cmds
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 7 insertions(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch main # the changes will disappear made in task3 branch
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ fd4615b  -   (HEAD -> main)  export png function  (21 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (21 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (22 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (29 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (29 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -   (oldBranch)  mising cmds  (29 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (31 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -D oldBranch
+Deleted branch oldBranch (was 1f8808e).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ fd4615b  -   (HEAD -> main)  export png function  (21 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (21 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (22 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (29 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (29 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (29 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (31 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch -
+Switched to branch 'taks3'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ a2f22c9  -   (HEAD -> taks3)  add missing cmds  (5 minutes ago)  - acolak@netas.com.tr 
+ fd4615b  -   (main)  export png function  (21 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (21 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (22 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (29 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (29 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (29 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (31 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task3 # the head of the task3 branch is the last commit of the main branch, git merge is forwarding the pointer of last commit to commit of task3
+merge: task3 - not something we can merge
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git switch -
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task3 # the head of the task3 branch is the last commit of the main branch, git merge is forwarding the pointer of last commit to commit of task3
+merge: task3 - not something we can merge
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -m taks3 task3 # :D
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task3 # the head of the task3 branch is the last commit of the main branch, git merge is forwarding the pointer of last commit to commit of task3
+Updating fd4615b..a2f22c9
+Fast-forward
+ index.html | 7 +++++++
+ 1 file changed, 7 insertions(+)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ a2f22c9  -   (HEAD -> main, task3)  add missing cmds  (9 minutes ago)  - acolak@netas.com.tr 
+ fd4615b  -    export png function  (21 hours ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (21 hours ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (22 hours ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (29 hours ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (29 hours ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (29 hours ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (31 hours ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (2 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (2 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -D task3 #(HEAD -> main, task3)  add missing cmds  (9 minutes ago)  - acolak@netas.com.tr, they point the same thing, delete task3
+Deleted branch task3 (was a2f22c9).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+nothing to commit, working tree clean
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch task4
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+  task4
+  task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout task4
+Switched to branch 'task4'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "replace mousehover script with css hover"
+[task4 0515d2f] replace mousehover script with css hover
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+
+
+
+
+
+
+
+
+
+
+
+
+
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout task5
+Switched to branch 'task5'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "exclude button from export png"
+[task5 c700ace] exclude button from export png
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 22 insertions(+), 20 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg
+ c700ace  -   (HEAD -> task5)  exclude button from export png  (19 seconds ago)  - acolak@netas.com.tr 
+ a2f22c9  -   (main)  add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+ fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+ 5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+ 2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+ d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+ 6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+ 1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+ b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+ a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+ a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # here 'git lg'does not show the commit on task4 because we are on task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --branche # to see all the commits from all branches
+fatal: unrecognized argument: --branche
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --branches
+commit c700acebddc2d866bb2b71a6a39832797a437ce0 (HEAD -> task5)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 21:52:21 2020 +0300
+
+    exclude button from export png
+
+commit 0515d2fe437bbc0fc5dae2e121c538a23568bde9 (task4)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Wed Nov 11 21:47:44 2020 +0300
+
+    replace mousehover script with css hover
+
+commit a2f22c92d4a20fc2a746e3695d49b0bda26571ed (main)
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sun Nov 8 21:20:58 2020 +0300
+
+    add missing cmds
+
+commit fd4615bf05d0543a1cb5cf3ab28e94a04b37a458
+Author: Ahmet COLAK <acolak@netas.com.tr>
+Date:   Sun Nov 8 00:40:19 2020 +0300
+
+    export png function
+
+commit 5c6a91079d488693f88bfb2a08b4b6120392fb99
+Author: Ahmet COLAK <acolak@netas.com.tr>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --branches --graph
+* commit c700acebddc2d866bb2b71a6a39832797a437ce0 (HEAD -> task5)
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Wed Nov 11 21:52:21 2020 +0300
+|
+|     exclude button from export png
+|
+| * commit 0515d2fe437bbc0fc5dae2e121c538a23568bde9 (task4)
+|/  Author: Ahmet COLAK <acolak@netas.com.tr>
+|   Date:   Wed Nov 11 21:47:44 2020 +0300
+|
+|       replace mousehover script with css hover
+|
+* commit a2f22c92d4a20fc2a746e3695d49b0bda26571ed (main)
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Sun Nov 8 21:20:58 2020 +0300
+|
+|     add missing cmds
+|
+* commit fd4615bf05d0543a1cb5cf3ab28e94a04b37a458
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Sun Nov 8 00:40:19 2020 +0300
+|
+|     export png function
+|
+* commit 5c6a91079d488693f88bfb2a08b4b6120392fb99
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout main #we are going to merge those branches on main branch
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch --no-merge #to see which branches are not merged on to man branch
+  task4
+  task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task4 #merge task4 with main
+Updating a2f22c9..0515d2f
+Fast-forward
+ css/style.css |  5 +++++
+ js/script.js  | 16 ++++++++--------
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --branches --graph # see hat task4 is merged with main
+* commit c700acebddc2d866bb2b71a6a39832797a437ce0 (task5)
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Wed Nov 11 21:52:21 2020 +0300
+|
+|     exclude button from export png
+|
+| * commit 0515d2fe437bbc0fc5dae2e121c538a23568bde9 (HEAD -> main, task4)
+|/  Author: Ahmet COLAK <acolak@netas.com.tr>
+|   Date:   Wed Nov 11 21:47:44 2020 +0300
+|
+|       replace mousehover script with css hover
+|
+* commit a2f22c92d4a20fc2a746e3695d49b0bda26571ed
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Sun Nov 8 21:20:58 2020 +0300
+|
+|     add missing cmds
+|
+* commit fd4615bf05d0543a1cb5cf3ab28e94a04b37a458
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Sun Nov 8 00:40:19 2020 +0300
+|
+|     export png function
+|
+* commit 5c6a91079d488693f88bfb2a08b4b6120392fb99
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch --no-merge # only task5 shoul be here, task4 is already merged above
+  task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch --merge # to see merged branches with main
+* main
+  task4
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task5
+Auto-merging js/script.js
+Merge made by the 'recursive' strategy.
+ index.html   | 40 +++++++++++++++++++++-------------------
+ js/script.js |  2 +-
+ 2 files changed, 22 insertions(+), 20 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git log --branches --graph # see hat task4 is merged with main
+*   commit 44f7c627a7f427fd824b9fc9cccb36ea60f6b5fd (HEAD -> main)
+|\  Merge: 0515d2f c700ace
+| | Author: Ahmet COLAK <acolak@netas.com.tr>
+| | Date:   Wed Nov 11 21:59:05 2020 +0300
+| |
+| |     Merge branch 'task5' into main
+| |
+| * commit c700acebddc2d866bb2b71a6a39832797a437ce0 (task5)
+| | Author: Ahmet COLAK <acolak@netas.com.tr>
+| | Date:   Wed Nov 11 21:52:21 2020 +0300
+| |
+| |     exclude button from export png
+| |
+* | commit 0515d2fe437bbc0fc5dae2e121c538a23568bde9 (task4)
+|/  Author: Ahmet COLAK <acolak@netas.com.tr>
+|   Date:   Wed Nov 11 21:47:44 2020 +0300
+|
+|       replace mousehover script with css hover
+|
+* commit a2f22c92d4a20fc2a746e3695d49b0bda26571ed
+| Author: Ahmet COLAK <acolak@netas.com.tr>
+| Date:   Sun Nov 8 21:20:58 2020 +0300
+|
+|     add missing cmds
+|
+* commit fd4615bf05d0543a1cb5cf3ab28e94a04b37a458
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # the last commit 'Merge branch 'task5' into main' is generated by git
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # unlike other commits, this one has 2 parents, c700acebddc2d866bb2b71a6a39832797a437ce0 and 0515d2fe437bbc0fc5dae2e121c538a23568bde9
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*    44f7c62  -   (HEAD -> main)  Merge branch 'task5' into main  (6 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -   (task5)  exclude button from export png  (12 minutes ago)  - acolak@netas.com.tr 
+* |  0515d2f  -   (task4)  replace mousehover script with css hover  (17 minutes ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+*  6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+*  1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+*  b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+*  a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+*  a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # git merge has an option of no-merge. when we merge a branch from to another, git is commiting changes auto.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # if we dont want this commit, we can run "git merge --no-cimmit task5"
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git reset --hard HEAD~ # task5 already merged, reset back to try "git merge --no-cimmit task5"
+HEAD is now at 0515d2f replace mousehover script with css hover
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  c700ace  -   (task5)  exclude button from export png  (17 minutes ago)  - acolak@netas.com.tr 
+| *  0515d2f  -   (HEAD -> main, task4)  replace mousehover script with css hover  (21 minutes ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+*  6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+*  1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+*  b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+*  a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+*  a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge --no-cimmit task5
+error: unknown option `no-cimmit'
+usage: git merge [<options>] [<commit>...]
+   or: git merge --abort
+   or: git merge --continue
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -F, --file <path>     read message from file
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --quit                --abort but leave index and working tree alone
+    --continue            continue the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --autostash           automatically stash/stash pop before and after
+    --overwrite-ignore    update ignored files (default)
+    --signoff             add Signed-off-by:
+    --no-verify           bypass pre-merge-commit and commit-msg hooks
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge --no-commit task5
+Auto-merging js/script.js
+Automatic merge went well; stopped before committing as requested
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+  task4
+  task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status # we will see that changes will stay in staging area waiting for commit
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   index.html
+        modified:   js/script.js
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge --abort #aborting the merge operation 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*  c700ace  -   (task5)  exclude button from export png  (21 minutes ago)  - acolak@netas.com.tr 
+| *  0515d2f  -   (HEAD -> main, task4)  replace mousehover script with css hover  (25 minutes ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+*  6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+*  1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+*  b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+*  a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+*  a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task5
+Auto-merging js/script.js
+Merge made by the 'recursive' strategy.
+ index.html   | 40 +++++++++++++++++++++-------------------
+ js/script.js |  2 +-
+ 2 files changed, 22 insertions(+), 20 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch --merged
+* main
+  task4
+  task5
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task4
+Deleted branch task4 (was 0515d2f).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task5
+Deleted branch task5 (was c700ace).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch task6
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch task7
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branches
+git: 'branches' is not a git command. See 'git --help'.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
+  task6
+  task7
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout task6
+Switched to branch 'task6'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am task6
+[task6 633e8c0] task6
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 37 insertions(+), 18 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout task7
+Switched to branch 'task7'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -am "fix hover css issue"
+[task7 9c562b6] fix hover css issue
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+
+
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 20 insertions(+), 20 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git checkout main # task6 and task7 has changes on the same lines, there will be conflicts while merging them to main
+Switched to branch 'main'
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task6
+Updating 5426c8c..633e8c0
+Fast-forward
+ index.html | 55 +++++++++++++++++++++++++++++++++++++------------------
+ 1 file changed, 37 insertions(+), 18 deletions(-)
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git merge task7
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> cat index.html
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <title>Learning GIT</title>
+    </head>
+    <body>
+        <button onclick="exportAsPNG()">Export as PNG</button>
+        <div id ="capture">
+            <h1>Git Cheat Sheet</h1>
+<<<<<<< HEAD
+            <div>
+                Config
+                <div>git config</div>
+            </div>
+            <div>
+                Create
+                <div>git init</div>
+            </div>
+            <div>
+                Workflow
+                <div>git add</div>
+                <div>git commit</div>
+                <div>git reset</div>
+                <div>git restore</div>
+            </div>
+            <div>
+                Inspection & History
+                <div>git status</div>
+                <div>git diff</div>
+                <div>git log</div>
+                <div>git show</div>
+                <div>git ls-files</div>
+            </div>
+            <div>
+                File Operations
+                <div>git clean</div>
+                <div>git rm</div>
+                <div>git mv</div>
+            </div>
+            <div>
+                Branching
+                <div>git stash</div>
+                <div>git branch</div>
+                <div>git checkout</div>
+                <div>git switch</div>
+                <div>git merge</div>
+            </div>
+=======
+            <div class="command">git config</div>
+            <div class="command">git init</div>
+            <div class="command">git add</div>
+            <div class="command">git status</div>
+            <div class="command">git commit</div>
+            <div class="command">git diff</div>
+            <div class="command">git log</div>
+            <div class="command">git reset</div>
+            <div class="command">git restore</div>
+            <div class="command">git clean</div>
+            <div class="command">git show</div>
+            <div class="command">git rm</div>
+            <div class="command">git ls-files</div>
+            <div class="command">git mv</div>
+            <div class="command">git stash</div>
+            <div class="command">git branch</div>
+            <div class="command">git checkout</div>
+            <div class="command">git switch</div>
+>>>>>>> task7
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js" integrity="sha512-k8F8QynmFNURwbUJC8drKA+fo3YfNvjqKzStdydD6au+MzvxBoRnxH8E31RJXwDY9DrnEiPhh9wBoDSIxhkyHQ==" crossorigin="anonymous"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> # we need to choose the changes in the file manually here
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+
+
+
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   css/style.css
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git add .
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   css/style.css
+        modified:   index.html
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git commit -m "fix conflict"
+[main f7df352] fix conflict
+ Committer: Ahmet COLAK <acolak@netas.com.tr>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git status
+On branch main
+nothing to commit, working tree clean
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git lg --branches --graph
+*    f7df352  -   (HEAD -> main)  fix conflict  (20 seconds ago)  - acolak@netas.com.tr 
+|\
+| *  9c562b6  -   (task7)  fix hover css issue  (9 minutes ago)  - acolak@netas.com.tr 
+* |  633e8c0  -   (task6)  task6  (13 minutes ago)  - acolak@netas.com.tr 
+|/
+*    5426c8c  -    Merge branch 'task5' into main  (44 minutes ago)  - acolak@netas.com.tr 
+|\
+| *  c700ace  -    exclude button from export png  (65 minutes ago)  - acolak@netas.com.tr 
+* |  0515d2f  -    replace mousehover script with css hover  (70 minutes ago)  - acolak@netas.com.tr 
+|/
+*  a2f22c9  -    add missing cmds  (3 days ago)  - acolak@netas.com.tr 
+*  fd4615b  -    export png function  (4 days ago)  - acolak@netas.com.tr 
+*  5c6a910  -    fixed the problem in index.html  (4 days ago)  - acolak@netas.com.tr 
+*  2bd14f0  -    move script.js to js/ folder  (4 days ago)  - acolak@netas.com.tr 
+*  d8b3a4c  -    adding .gitignore  (4 days ago)  - acolak@netas.com.tr 
+*  6ded45b  -    remove txt files  (4 days ago)  - acolak@netas.com.tr 
+*  1f8808e  -    mising cmds  (4 days ago)  - acolak@netas.com.tr 
+*  b9d327e  -    add sciprt.js to the last commit  (4 days ago)  - acolak@netas.com.tr 
+*  a42e1e1  -    Change header color  (5 days ago)  - acolak@netas.com.tr 
+*  a63f40e  -    createIndex.html_202011061747  (5 days ago)  - acolak@netas.com.tr 
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund>
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch --no-merged
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> #no un-merged branch
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task6
+Deleted branch task6 (was 633e8c0).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch -d task7
+Deleted branch task7 (was 9c562b6).
+PS D:\Users\acolak\Desktop\acolak\SPRING\GIT Training\playgorund> git branch
+* main
